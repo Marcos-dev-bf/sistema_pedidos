@@ -9,7 +9,8 @@ class Produto:
 class Carrinho:
 
     def __init__(self):
-        lista_carrinho = [] #composição
+        self.lista_carrinho = [] #composição
+        self.proximo_id = 1
 
     def adicionar_produto(self, produto):
         id = self.gerar_id()
@@ -18,11 +19,13 @@ class Carrinho:
 
     def gerar_id(self):
         # Implementação simplificada para geração de ID
-        proximo_id =+ 1 
-        return proximo_id
+        id_atual = self.proximo_id #Variavel para armazenar os id ja gerados 
+        self.proximo_id += 1 # Gera o proximo id, realizando a soma de acordo com o anterior
+        return id_atual
 
     def remover_produto(self):
-        pass
+        for produto in self.lista_carrinho:
+            print(f'ID: {produto.id_produto}, Produto: {produto.nome}, Valor: {produto.preco}, quantidade: {produto.quantidade}')
     
     def listar_produto(self):
         pass
