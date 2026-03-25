@@ -1,5 +1,10 @@
 from classes import *
 from Funcoes import *
 
-c1 = Produto('Marcos', 15.50, 56)
-Carrinho.adicionar_produto(c1)
+print
+c1 = Produto("Coca-cola", 5.00, 10)
+c2 = Produto("Pepsi", 4.50, 8) 
+carrinho = Carrinho()
+carrinho.adicionar_produto(c1) 
+carrinho.adicionar_produto(c2)
+print(carrinho.gerar_id())
