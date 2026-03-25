@@ -4,10 +4,19 @@ class Produto:
         self.preco = preco
         self.quantidade = quantidade
 
+
 class Carrinho:
 
-    def adicionar_produto(self):
-        pass
+    def __init__(self):
+        lista_carrinho = [] #composição
+
+    def adicionar_produto(self, produto):
+        
+        print(produto.nome)
+
+    def gerar_id(self):
+
+        return
 
     def remover_produto(self):
         pass
