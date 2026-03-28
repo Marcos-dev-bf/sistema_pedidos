@@ -13,6 +13,7 @@ class Produto:
     def __repr__(self):  # É usado quando Python precisa representar objetos em listas
         return self.__str__()
 
+
 class CarrinhoDeCompras:
 
     def __init__(self):
@@ -51,7 +52,7 @@ class CarrinhoDeCompras:
         for produto in self.lista_carrinho:
             valorproduto = produto.preco * produto.quantidade
             valor_total += valorproduto
-        print(valor_total)
+        return valor_total  # Agora retorna o valor em vez de printar
 
     def buscar_produto(self, nome):
         encontrou = False
@@ -70,13 +71,10 @@ class Pedido:
 
     def gerar_pedido(self):
         for produto in self.carrinho.lista_carrinho:
-            print(f'Produto: {produto.nome}\n'
-                  f'Valor unitario: {produto.preco}\n'
-                  f'Quantidade: {produto.quantidade}\n'
-                  f'valoe total: {self.carrinho.calcular_total}')
-    
-    def mostrar_produto(self):
-        pass
+            print(f'Produto: {produto.nome}'
+                  f'Valor unitario: {produto.preco}'
+                  f'Quantidade: {produto.quantidade}')
 
     def exibir_total(self):
-        pass
+        total = self.carrinho.calcular_total()
+        print(f"Total do pedido: R$ {total:.2f}")
